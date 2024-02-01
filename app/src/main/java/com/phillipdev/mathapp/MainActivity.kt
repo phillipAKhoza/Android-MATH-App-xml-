@@ -20,6 +20,17 @@ class MainActivity : AppCompatActivity() {
 
         add.setOnClickListener {
             var intent = Intent(this@MainActivity, GameActivity::class.java)
+            intent.putExtra("game","Addition")
+            startActivity(intent)
+        }
+        subtract.setOnClickListener {
+            var intent = Intent(this@MainActivity, GameActivity::class.java)
+            intent.putExtra("game","Subtraction")
+            startActivity(intent)
+        }
+        multiple.setOnClickListener {
+            var intent = Intent(this@MainActivity, GameActivity::class.java)
+            intent.putExtra("game","Multiplication")
             startActivity(intent)
         }
     }

@@ -26,11 +26,12 @@ class GameActivity : AppCompatActivity() {
     private lateinit var  timer: CountDownTimer
     private  val startTimeMms : Long = 40000
     var timeLeftMms : Long = startTimeMms
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-
-        supportActionBar!!.title="Addition"
+        var game = intent.getStringExtra("game")
+        supportActionBar!!.title= game
 
         score = findViewById(R.id.tvScore)
         live = findViewById(R.id.tvLives)
@@ -39,7 +40,7 @@ class GameActivity : AppCompatActivity() {
         btnOk = findViewById(R.id.btnOk)
         question = findViewById(R.id.tvQuestion)
         answer = findViewById(R.id.etnAnswer)
-        getQuestion()
+        getQuestion(game)
         btnOk.setOnClickListener {
             val input = answer.text.toString()
             if (input== ""){
@@ -78,18 +79,29 @@ class GameActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }else{
-                getQuestion()
+                getQuestion(game)
             }
         }
     }
 
-    fun getQuestion(){
+    private fun getQuestion(game: String?) {
         val num1 =Random.nextInt(0,100)
         val num2 =Random.nextInt(0,100)
 
-        question.text= "$num1 + $num2"
+        if(game =="Addition"){
+            question.text= "$num1 + $num2"
 
-        correctAnswer = num1+num2
+            correctAnswer = num1+num2
+        }else if (game == "Subtraction"){
+            question.text= "$num1 - $num2"
+
+            correctAnswer = num1-num2
+        }else{
+            question.text= "$num1 x $num2"
+
+            correctAnswer = num1*num2
+        }
+
 
         startCountDown()
     }
