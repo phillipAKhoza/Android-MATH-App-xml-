@@ -30,7 +30,7 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-        var game = intent.getStringExtra("game")
+        val game = intent.getStringExtra("game")
         supportActionBar!!.title= game
 
         score = findViewById(R.id.tvScore)
@@ -88,18 +88,22 @@ class GameActivity : AppCompatActivity() {
         val num1 =Random.nextInt(0,100)
         val num2 =Random.nextInt(0,100)
 
-        if(game =="Addition"){
-            question.text= "$num1 + $num2"
+        when (game) {
+            "Addition" -> {
+                question.text= "$num1 + $num2"
 
-            correctAnswer = num1+num2
-        }else if (game == "Subtraction"){
-            question.text= "$num1 - $num2"
+                correctAnswer = num1+num2
+            }
+            "Subtraction" -> {
+                question.text= "$num1 - $num2"
 
-            correctAnswer = num1-num2
-        }else{
-            question.text= "$num1 x $num2"
+                correctAnswer = num1-num2
+            }
+            else -> {
+                question.text= "$num1 x $num2"
 
-            correctAnswer = num1*num2
+                correctAnswer = num1*num2
+            }
         }
 
 
