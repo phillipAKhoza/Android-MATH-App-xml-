@@ -25,7 +25,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tvScore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -45,7 +45,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/tvLives"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -65,7 +65,7 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tvTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -77,7 +77,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tvQuestion"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_marginTop="20dp"
@@ -88,7 +88,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/etnAnswer"
         android:layout_width="300dp"
         android:layout_height="75dp"
         android:layout_marginTop="20dp"
@@ -100,5 +100,37 @@
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shape"
+            android:backgroundTint="@null"
+            android:text="OK"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_shape"
+            android:backgroundTint="@null"
+            android:text="NEXT"
+            android:textSize="20sp" />
+    </LinearLayout>
 
 </LinearLayout>
